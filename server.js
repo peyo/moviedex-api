@@ -3,11 +3,11 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 const moviesData = require("./movies-data-small");
-
+require("dotenv").config()
 const app = express();
 
 app.use(morgan("dev"));
-app.use(helmet.hidePoweredBy({ setTo: "PHP 4.2.0" }));
+app.use(helmet());
 app.use(cors());
 
 const validGenre =
